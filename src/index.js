@@ -2,14 +2,12 @@
 
 import { SchemaDirectiveVisitor } from 'graphql-tools';
 import { AuthenticationError } from 'apollo-server-errors';
-import { defaultFieldResolver } from 'graphql';
 import AuthorizationError from './AuthorizationError';
 
 import validateScope from './validateScope';
 
 export default class AuthenticationDirective extends SchemaDirectiveVisitor {
   visitFieldDefinition(field) {
-    const { resolve = defaultFieldResolver } = field;
     const { scope: requiredScope } = this.args;
 
     /* eslint-disable no-param-reassign */
@@ -35,7 +33,7 @@ export default class AuthenticationDirective extends SchemaDirectiveVisitor {
           });
       }
 
-      return resolve.apply(this, args);
+      return field.resolve.apply(this, args);
     };
   }
 }
