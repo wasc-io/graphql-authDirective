@@ -1,0 +1,33 @@
+{
+  "name": "@wasc/graphql-authdirective",
+  "version": "0.1.0",
+  "description": "",
+  "main": "build/index.cjs.js",
+  "module": "build/index.esm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bump": "standard-version",
+    "build": "rollup -c",
+    "lint": "wasc-tools lint",
+    "format": "wasc-tools format"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasc-io/graphql-authDirective.git"
+  },
+  "author": "Nicolai Schmid <hey@schmid.uno>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/wasc-io/graphql-authDirective/issues"
+  },
+  "homepage": "https://github.com/wasc-io/graphql-authDirective#readme",
+  "dependencies": {
+    "@wasc/tools": "^1.16.1",
+    "apollo-server-errors": "^2.0.2",
+    "graphql": "^14.0.0",
+    "graphql-tools": "^3.1.1",
+    "rollup": "^0.65.0",
+    "rollup-plugin-commonjs": "^9.1.6",
+    "standard-version": "^4.4.0"
+  }
+}
