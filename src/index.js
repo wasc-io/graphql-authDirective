@@ -39,4 +39,36 @@ export default class AuthenticationDirective extends SchemaDirectiveVisitor {
       return resolve.apply(this, args);
     };
   }
+
+  visitObject(object) {
+    const { defaultFieldResolver } = graphql;
+    const { resolve = defaultFieldResolver } = object;
+    const { scope: requiredScope } = this.args;
+
+    /* eslint-disable no-param-reassign */
+    object.resolve = async function rslv(...args) {
+      /* eslint-enable no-param-reassign */
+      const [, , { auth }] = args;
+
+      // Kick out any not authenticated user
+      if (!auth) throw new AuthenticationError('UNAUTHENTICATED');
+
+      // Kick out anyone with empty authentication
+      if (!auth.isAuthenticated) throw new AuthenticationError('UNAUTHENTICATED');
+
+      // Kick out anyone with empty authentication
+      if (auth.isAuthenticated === false) throw new AuthenticationError('UNAUTHENTICATED');
+
+      // Setting a required scope is optional
+      if (requiredScope) {
+        if (!validateScope(requiredScope, auth.scope))
+          throw new AuthorizationError('INVALID_SCOPE', {
+            required: requiredScope,
+            provided: auth.scope,
+          });
+      }
+
+      return resolve.apply(this, args);
+    };
+  }
 }
