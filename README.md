@@ -32,20 +32,20 @@ npm i @wasc/graphql-authDirective
 ```
 
 ```javascript
-import authenticateDirective from '@wasc/graphql-authDirective';
+import authenticateDirective from "@wasc/graphql-authDirective";
 
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
   schemaDirectives: {
-    authenticated: authenticateDirective,
+    authenticated: authenticateDirective
   },
   /**
    * This one is important, if you are using a middleware to check the users token
-   * and set the auth object, make shure to include the request
+   * and set the auth object, make sure to include the request
    * as the graphql-context
    */
-  context: ({ req }) => req,
+  context: ({ req }) => req
 });
 ```
 
