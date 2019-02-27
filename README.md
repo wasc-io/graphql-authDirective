@@ -8,18 +8,18 @@
 
 # Preperation
 
-The directive expects a `auth`-property on the graphql-context. It should contain a `isAuthenticated` Boolean and an array of string with [OAuth scopes](https://www.oauth.com/oauth2-servers/scope/defining-scopes/) on the scope property of the auth object.
+The directive expects a `auth`-property on the graphql-context (in most cases the express-request). It should contain a `isAuthenticated` Boolean and an array of strings with [OAuth scopes](https://www.oauth.com/oauth2-servers/scope/defining-scopes/) on the scope property of the auth object.
 
 ```javascript
 {
     auth: {
         isAuthenticated: true, // or false
-        scope: ['user:properties:language:*'],
+        scope: ['user:properties:language:*', 'payments:*'],
     }
 }
 ```
 
-If you want to create a middleware which authenticates your user before the graphql schema, make shure to pass the request as a graphql-context to the resolvers. Look at the ApolloServer configuration below to verify your configuration.
+If you want to create a middleware which authenticates your user before the graphql schema, make sure to pass the request as a graphql-context to the resolvers. Look at the ApolloServer configuration below to verify your configuration.
 
 ## Usage
 
@@ -42,7 +42,7 @@ const apolloServer = new ApolloServer({
   },
   /**
    * This one is important, if you are using a middleware to check the users token
-   * and set the auth object, make sure to include the request
+   * and set the auth object (described above), make sure to include the request
    * as the graphql-context
    */
   context: ({ req }) => req
