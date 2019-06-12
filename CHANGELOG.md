@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/wasc-io/graphql-authDirective/compare/v1.0.1...v1.0.2) (2019-06-12)
+
+
+### Bug Fixes
+
+* **validateScope:** the algorithm validates multiple requested scopes correctly ([4d53cad](https://github.com/wasc-io/graphql-authDirective/commit/4d53cad))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/wasc-io/graphql-authDirective/compare/v1.0.0...v1.0.1) (2019-02-27)
 
