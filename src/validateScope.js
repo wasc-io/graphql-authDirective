@@ -1,13 +1,16 @@
 export default function validateScope(required, provided) {
-  let hasScope = false;
+  const hasRequired = [];
 
   required.forEach(scope => {
-    provided.forEach(perm => {
-      // user:* -> user:create, user:view:self
-      const permRe = new RegExp(`^${perm.replace('*', '.*')}$`);
-      if (permRe.exec(scope)) hasScope = true;
-    });
+    hasRequired.push(
+      provided.some(perm => {
+        // user:* -> user:create, user:view:self
+        const permRe = new RegExp(`^${perm.replace("*", ".*")}$`);
+
+        return permRe.exec(scope);
+      })
+    );
   });
 
-  return hasScope;
+  return !hasRequired.includes(false);
 }
