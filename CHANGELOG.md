@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.0.4](https://github.com/wasc-io/graphql-authDirective/compare/v1.0.3...v1.0.4) (2019-09-19)
+
+
+### Bug Fixes
+
+* wrong default import from graphql; switch to import destructuring ([7d6109d](https://github.com/wasc-io/graphql-authDirective/commit/7d6109d))
 
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/wasc-io/graphql-authDirective/compare/v1.0.2...v1.0.3) (2019-08-29)
