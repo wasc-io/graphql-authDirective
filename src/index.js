@@ -2,8 +2,8 @@
 
 import { SchemaDirectiveVisitor } from 'graphql-tools';
 import { AuthenticationError } from 'apollo-server-errors';
-import AuthorizationError from './AuthorizationError';
 import graphql from 'graphql';
+import AuthorizationError from './AuthorizationError';
 
 import validateScope from './validateScope';
 
