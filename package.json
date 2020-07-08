@@ -33,6 +33,6 @@
   "dependencies": {
     "apollo-server-errors": "^2.3.4",
     "graphql": "^15.0.0",
-    "graphql-tools": "^4.0.6"
+    "graphql-tools": "^6.0.0"
   }
 }
