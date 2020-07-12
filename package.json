@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/wasc-io/graphql-authDirective.git"
   },
-  "author": "Nicolai Schmid <hey@schmid.uno>",
+  "author": "Nicolai Schmid <nicolai@schmid.uno>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/wasc-io/graphql-authDirective/issues"
