@@ -9,5 +9,8 @@ export default {
   // an array for the `output` option, where we can specify
   // `file` and `format` for each target)
   input: 'src/index.js',
-  output: [{ file: pkg.main, format: 'cjs' }, { file: pkg.module, format: 'es' }],
+  output: [
+    { file: pkg.main, format: 'cjs' },
+    { file: pkg.module, format: 'es' },
+  ],
 };
