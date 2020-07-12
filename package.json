@@ -9,7 +9,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bump": "standard-version",
     "build": "rollup -c",
     "lint": "wasc-tools lint",
     "format": "wasc-tools format"
@@ -38,8 +37,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "rollup": "2.21.0",
-    "rollup-plugin-commonjs": "10.1.0",
-    "standard-version": "8.0.0"
+    "rollup-plugin-commonjs": "10.1.0"
   },
   "dependencies": {
     "apollo-server-errors": "^2.3.4",
