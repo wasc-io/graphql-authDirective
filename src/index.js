@@ -1,4 +1,4 @@
-import { SchemaDirectiveVisitor } from 'graphql-tools';
+import { SchemaDirectiveVisitor } from '@graphql-tools/utils';
 import { AuthenticationError } from 'apollo-server-errors';
 import { defaultFieldResolver } from 'graphql';
 import AuthorizationError from './AuthorizationError';
