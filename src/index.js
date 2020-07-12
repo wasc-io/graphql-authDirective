@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-
 import { SchemaDirectiveVisitor } from 'graphql-tools';
 import { AuthenticationError } from 'apollo-server-errors';
 import { defaultFieldResolver } from 'graphql';
@@ -21,10 +19,12 @@ export default class AuthenticationDirective extends SchemaDirectiveVisitor {
       if (!auth) throw new AuthenticationError('UNAUTHENTICATED');
 
       // Kick out anyone with empty authentication
-      if (!auth.isAuthenticated) throw new AuthenticationError('UNAUTHENTICATED');
+      if (!auth.isAuthenticated)
+        throw new AuthenticationError('UNAUTHENTICATED');
 
       // Kick out anyone with empty authentication
-      if (auth.isAuthenticated === false) throw new AuthenticationError('UNAUTHENTICATED');
+      if (auth.isAuthenticated === false)
+        throw new AuthenticationError('UNAUTHENTICATED');
 
       // Setting a required scope is optional
       if (requiredScope) {
@@ -52,10 +52,12 @@ export default class AuthenticationDirective extends SchemaDirectiveVisitor {
       if (!auth) throw new AuthenticationError('UNAUTHENTICATED');
 
       // Kick out anyone with empty authentication
-      if (!auth.isAuthenticated) throw new AuthenticationError('UNAUTHENTICATED');
+      if (!auth.isAuthenticated)
+        throw new AuthenticationError('UNAUTHENTICATED');
 
       // Kick out anyone with empty authentication
-      if (auth.isAuthenticated === false) throw new AuthenticationError('UNAUTHENTICATED');
+      if (auth.isAuthenticated === false)
+        throw new AuthenticationError('UNAUTHENTICATED');
 
       // Setting a required scope is optional
       if (requiredScope) {
