@@ -5,6 +5,8 @@ import AuthorizationError from './AuthorizationError';
 
 import validateScope from './validateScope';
 
+export { default as validateScope } from './validateScope';
+
 export default class AuthenticationDirective extends SchemaDirectiveVisitor {
   visitFieldDefinition(field) {
     const { resolve = defaultFieldResolver } = field;
