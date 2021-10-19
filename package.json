@@ -35,7 +35,7 @@
   "devDependencies": {
     "@wasc/tools": "5.8.2",
     "husky": "4.2.5",
-    "lint-staged": "10.2.11",
+    "lint-staged": "11.2.3",
     "rollup": "2.21.0",
     "rollup-plugin-commonjs": "10.1.0"
   },
