@@ -40,7 +40,7 @@
     "rollup-plugin-commonjs": "10.1.0"
   },
   "dependencies": {
-    "@graphql-tools/utils": "^6.0.12",
+    "@graphql-tools/utils": "^8.0.0",
     "apollo-server-errors": "^2.3.4",
     "graphql": "^15.0.0"
   }
