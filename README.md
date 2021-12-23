@@ -63,4 +63,4 @@ type Query {
 }
 ```
 
-## Have fun coding!
+This was made by [Wasc](https://wasc.me)
