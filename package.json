@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@graphql-tools/utils": "^8.6.1",
-    "apollo-server-errors": "^2.3.4",
+    "apollo-server-errors": "^3.0.0",
     "graphql": "^15.0.0"
   }
 }
