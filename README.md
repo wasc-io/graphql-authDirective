@@ -6,7 +6,7 @@
 
 [Graphql-authDirective](https://github.com/wasc-io/graphql-authDirective) is a GraphQL-Directive for authenticating specific fields and types on your schema and also checking if the user has a valid scope.
 
-# Preperation
+# Preparation
 
 The directive expects a `auth`-property on the graphql-context (in most cases the express-request). It should contain a `isAuthenticated` Boolean and an array of strings with [OAuth scopes](https://www.oauth.com/oauth2-servers/scope/defining-scopes/) on the scope property of the auth object.
 
@@ -34,12 +34,12 @@ npm i @wasc/graphql-authDirective
 ```javascript
 import authenticateDirective from '@wasc/graphql-authDirective';
 
-const apolloServer = new ApolloServer({
-  typeDefs,
+const { authDirectiveTypeDefs, authDirectiveTransformer } =
+  authenticateDirective('authenticated');
+
+const schema = makeExecutableSchema({
+  typeDefs: [authDirectiveTypeDefs, typeDefs]
   resolvers,
-  schemaDirectives: {
-    authenticated: authenticateDirective,
-  },
   /**
    * This one is important, if you are using a middleware to check the users token
    * and set the auth object (described above), make sure to include the request
@@ -47,12 +47,8 @@ const apolloServer = new ApolloServer({
    */
   context: ({ req }) => req,
 });
-```
 
-and declare it in your schema:
-
-```graphql
-directive @authenticated(scope: [String]) on FIELD_DEFINITION | OBJECT
+const authenticatedSchema = authDirectiveTransformer(schema);
 ```
 
 you can now specify the authentication of specific fields and Types
