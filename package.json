@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/wasc-io/graphql-authDirective#readme",
   "devDependencies": {
-    "@wasc/tools": "5.8.2",
+    "@wasc/tools": "5.15.0",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
     "rollup": "2.21.0",
