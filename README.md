@@ -23,7 +23,7 @@ If you want to create a middleware which authenticates your user before the grap
 
 ## Usage
 
-Currently this package is only tested with ApolloServer, and will only work with ApolloServer, since it uses apollo-specific errors to alert when the user is not authenticated.
+Currently this package is only tested with ApolloServer.
 
 To use it with ApolloServer 2.0 install it, import it and set it as a schema directive in the Server-Configuration:
 
