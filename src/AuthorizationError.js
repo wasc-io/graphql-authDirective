@@ -1,7 +1,9 @@
-import { ApolloError } from 'apollo-server-errors';
+import { GraphQLError } from 'graphql';
 
-export default class AuthorizationError extends ApolloError {
-  constructor(message, properties) {
-    super(message, 'UNAUTHORIZED', properties);
+export default class AuthorizationError extends GraphQLError {
+  constructor(message, extensions) {
+    super(message, { ...extensions, code: 'UNAUTHORIZED' });
+
+    Object.defineProperty(this, 'name', { value: 'AuthorizationError' });
   }
 }

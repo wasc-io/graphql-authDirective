@@ -1,7 +1,7 @@
-import { AuthenticationError } from 'apollo-server-errors';
 import { defaultFieldResolver } from 'graphql';
 import { mapSchema, getDirective, MapperKind } from '@graphql-tools/utils';
 
+import AuthenticationError from './AuthenticationError';
 import AuthorizationError from './AuthorizationError';
 
 import validateScope from './validateScope';
