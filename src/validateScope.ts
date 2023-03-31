@@ -1,5 +1,5 @@
-export default function validateScope(required, provided) {
-  const hasRequired = [];
+export default function validateScope(required: string[], provided: string[]) {
+  const hasRequired: boolean[] = [];
 
   required.forEach((scope) => {
     hasRequired.push(
